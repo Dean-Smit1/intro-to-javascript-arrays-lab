@@ -1,197 +1,256 @@
 /*
-Exercise 1: maxOfTwoNumbers()
+Exercise 1: Define an empty array
 
-In this exercise, create a function named maxOfTwoNumbers. 
-It should take two numbers as inputs and return the larger number. 
-If they're equal, return either one.
+1) Create an empty array and assign it to a variable called foods.
 
 Exercise 1 has been completed for you:
 */
-const maxOfTwoNumbers = (x, y) => {
-  if (x >= y) {
-    return x;
-  } else {
-    return y;
+
+const foods = [];  
+
+console.log('Exercise 1 result:', foods);
+
+
+/*
+Exercise 2: Add strings to the array
+
+1) Add 'pizza' and 'cheeseburger' to the foods array. 
+
+Note: 'pizza' should be the first item in the array, followed by 'cheeseburger'.
+
+Complete Exercise 2 in the space below:
+*/
+
+foods[0] = 'pizza';
+foods[1] = 'cheeseburger';
+
+console.log('Exercise 2 result:', foods);
+
+
+/*
+Exercise 3: Insert at the beginning
+
+1) Insert the string 'taco' at the beginning of the foods array.
+
+Complete Exercise 3 in the space below:
+*/
+
+
+foods[0] = 'taco';
+console.log('Exercise 3 result:', foods);
+
+
+/*
+Exercise 4: Access an array element
+
+1) Retrieve the 'pizza' string from the array based on its position (index) in
+   the array.  
+
+2) Assign it to a variable called favFood.
+
+Complete Exercise 4 in the space below:
+*/
+
+let favFood = foods[0];
+
+console.log('Exercise 4 result:', favFood);
+
+
+/*
+Exercise 5: Insert an element between two others
+
+1) Insert the string 'tofu' between 'pizza' and 'cheeseburger' in the array.
+
+Complete Exercise 5 in the space below:
+*/
+
+
+foods.splice(1, 0, 'tofu');
+console.log('Exercise 5 result:', foods);
+
+
+/*
+Exercise 6: Replace elements
+
+1) Replace 'pizza' in the foods array with 'sushi' and 'cupcake'.
+
+Complete Exercise 6 in the space below:
+*/
+
+foods[0] = 'sushi';
+foods[1] = 'cupcake';
+
+console.log('Exercise 6 result:', foods);
+
+
+/*
+Exercise 7: Using the slice() method
+
+1) Use the slice() method to create a new array that contains 'sushi' and 
+   'cupcake'.
+
+2) Assign it to a variable named yummy.
+
+Complete Exercise 7 in the space below:
+*/
+
+let yummy = foods.slice(0, 2);
+
+console.log('Exercise 7 result:', yummy);
+
+
+/*
+Exercise 8: Finding an index
+
+1) Using the indexOf() method, find the index of the string 'tofu' in the 
+   foods array. 
+
+2) Assign it to a variable named soyIdx.
+
+Complete Exercise 8 in the space below:
+*/
+
+let soyIdx = foods.indexOf('tofu');
+
+console.log('Exercise 8 result:', soyIdx);
+
+
+/*
+Exercise 9: Joining elements
+
+1) Use the join() method to concatenate the strings in the foods array, 
+   separated by ' -> '. 
+
+2) Assign the result to a variable called allFoods. 
+
+Note: The final result should log as:
+'taco -> sushi -> cupcake -> tofu -> cheeseburger'
+
+Complete Exercise 9 in the space below:
+*/
+
+
+let allFoods = foods.join(' -> ');
+console.log('Exercise 9 result:', allFoods);
+
+
+/*
+Exercise 10: Check for an element
+
+1) Using the .includes() method, check if the foods array contains the string
+   'soup'.
+
+2) Assign the result to a variable called hasSoup`.
+
+Complete Exercise 10 in the space below:
+*/
+
+
+let hasSoup = foods.includes('soup');
+console.log('Exercise 10 result:', hasSoup);
+
+
+/*
+Exercise 11: Odd numbers from an array
+
+1) Choose a method to iterate through the nums array.
+
+2) Push each odd number to a new array named odds.
+
+Hint: Initialize the odds variable to an empty array before the iteration.
+
+Complete Exercise 11 in the space below:
+*/
+
+const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
+
+
+let odds = [];
+
+for (let i = 0; i < nums.length; i++) {
+  if (nums[i] % 2 !== 0) {
+    odds.push(nums[i]);
+  }
+}
+console.log('Exercise 11 result:', odds);
+
+
+/*
+Exercise 12: FizzBuzz with arrays
+
+1) Choose a method to iterate through the nums array. 
+
+2. As you loop, sort the numbers into new arrays based on the following rules:
+
+   - Push any number evenly divisible by 3 to an array called fizz.
+   - Push any number evenly divisible by 5 to an array called buzz.
+   - Push any number that is evenly divisible by 3 and 5 to an array called
+     fizzbuzz.
+
+   Note: A single number may meet more than one of the above rules. If it does,
+         it should be placed in multiple arrays. For example, the number 15
+         will appear in the fizz, buzz, and fizzbuzz arrays.
+
+Complete Exercise 12 in the space below:
+*/
+let fizz = [];
+let buzz = [];
+let fizzbuzz = [];
+
+for (let i = 0; i < nums.length; i++) {
+  if (nums[i] % 3 === 0) {
+    fizz.push(nums[i]);
+  }
+  if (nums[i] % 5 === 0) {
+    buzz.push(nums[i]);
+  }
+  if (nums[i] % 3 === 0 && nums[i] % 5 === 0) {
+    fizzbuzz.push(nums[i]);
   }
 }
 
-console.log('Exercise 1 Result:', maxOfTwoNumbers(3, 9));
 
-
-
-/*
-Exercise 2: isAdult()
-
-Write a function named isAdult that takes an age as input. 
-If the age is 18 or more, return "Adult". Otherwise, return "Minor".
-*/
-const isAdult = (age) => {
-  if (age >= 18) {
-    return 'Adult';  
-  } else {
-    return 'Minor';  
-  }
-}
-
-console.log('Exercise 2 Result:', isAdult(21));  
-
-
+console.log('Exercise 12 Results:');
+console.log('  fizz:', fizz);
+console.log('  buzz:', buzz);
+console.log('  fizzbuzz:', fizzbuzz);
 
 
 /*
-Exercise 3: isCharAVowel()
+Exercise 13: Retrieve the Last Array
 
-Write a function named isCharAVowel that takes a single character as 
-an argument. It should return true if the character is a vowel and 
-false otherwise. For the purposes of this exercise, the character 
-y should not be considered a vowel.
+1) Assign the last nested array in the numArrays below to a variable named
+   numList. As you do this, also fulfill these goals:
 
-Example: isCharAVowel('a') should return true.
+   - Assume you don't know how many nested arrays numArrays contains.
+   - Do not alter the original numArrays array.
+
+Complete Exercise 13 in the space below:
 */
-const isCharAVowel = (char) => {
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
-  return vowels.includes(char.toLowerCase());
-}
 
-console.log('Exercise 3 Result:', isCharAVowel("a"));  
-console.log('Exercise 3 Result:', isCharAVowel("b"));  
-console.log('Exercise 3 Result:', isCharAVowel("E"));  
-console.log('Exercise 3 Result:', isCharAVowel("y"));  
+const numArrays = [
+	[100, 5, 23],
+	[15, 21, 72, 9],
+	[45, 66],
+	[7, 81, 90]
+];
 
+let numList = numArrays[numArrays.length - 1];
 
+console.log('Exercise 13 result:', numList);
 
 
 /*
-Exercise 4: generateEmail()
+Exercise 14: Accessing within nested arrays
 
-Create a function named generateEmail. It should take two strings: 
-a name and a domain. It should return a simple email address.
+1) Retrieve the number 66 from the numArrays array. As part of this process
+   do not alter the original numArrays array.
 
-Example: generateEmail('johnsmith', 'example.com') 
-should return 'johnsmith@example.com'.
+2) Assign it to a variable called num.
+
+Complete Exercise 14 in the space below:
 */
-const generateEmail = (name, domain) => {
-  return `${name}@${domain}`; 
-}
-
-console.log('Exercise 4 Result:', generateEmail("Smith", "example.com"));  // Should log: Smith@example.com
-console.log('Exercise 4 Result:', generateEmail("JessicaSmith", "example.com"));
 
 
-
-/*
-Exercise 5: greetUser()
-
-Define a function called greetUser. It should take a name and a 
-time of day (morning, afternoon, evening) and return a personalized 
-greeting.
-
-Example: greetUser('Sam', 'morning') should return "Good morning, Sam!"
-*/
-const greetUser = (name, timeOfDay) => {
-  return `Good ${timeOfDay}, ${name}!`;  
-}
-
-console.log('Exercise 5 Result:', greetUser("Jessica", "morning"));  // Should log: Good morning, Jessica!
-console.log('Exercise 5 Result:', greetUser("Smith", "morning"));
-
-
-
-/*
-Exercise 6: maxOfThree()
-
-Define a function, maxOfThree. It should accept three numbers 
-and return the largest among them.
-
-Example: maxOfThree(17, 4, 9) should return 17.
-*/
-const maxOfThree = (x, y, z) => {
-  return Math.max(x, y, z);  
-}
-
-console.log('Exercise 6 Result:', maxOfThree(17, 4, 9));  // Should log: 17
-console.log('Exercise 6 Result:', maxOfThree(26, 34, 100));
-
-
-
-/*
-Exercise 7: calculateTip()
-
-Create a function called calculateTip. It should take two arguments: 
-the bill amount and the tip percentage (as a whole number). 
-The function should return the amount of the tip.
-
-Example: calculateTip(50, 20) should return 10.
-*/
-const calculateTip = (billAmount, tipPercentage) => {
-  return (billAmount * tipPercentage) / 100;  
-}
-
-console.log('Exercise 7 Result:', calculateTip(50, 20));  // Should log: 10
-console.log('Exercise 7 Result:', calculateTip(60, 80));
-
-
-
-/*
-Exercise 8: convertTemperature()
-
-Write a function named convertTemperature. 
-It takes two arguments: a temperature and a string representing the 
-scale ('C' for Celsius, 'F' for Fahrenheit). 
-Convert the temperature to the other scale.
-
-Example: convertTemperature(32, 'C') should return 89.6 (Fahrenheit).
-Example: convertTemperature(32, 'F') should return 0 (Celsius).
-*/
-const convertTemperature = (temp, scale) => {
-  if (scale === 'C') {
-    // Convert Celsius to Fahrenheit
-    return (temp * 9/5) + 32;
-  } else if (scale === 'F') {
-    // Convert Fahrenheit to Celsius
-    return (temp - 32) * 5/9;
-  } else {
-    // If an invalid scale is provided, return an error message
-    return "Invalid scale. Use 'C' for Celsius or 'F' for Fahrenheit.";
-  }
-}
-
-console.log('Exercise 8 Result:', convertTemperature(32, "C"));  // Should log: 89.6
-console.log('Exercise 8 Result:', convertTemperature(32, "F"));  // Should log: 0
-
-
-
-/*
-Exercise 9: basicCalculator()
-
-Create a function named basicCalculator. 
-It should take three arguments: two numbers and a string representing 
-an operation ('add', 'subtract', 'multiply', 'divide'). 
-Perform the provided operation on the two numbers. 
-In operations where the order of numbers is important, 
-treat the first parameter as the first operand and the 
-second parameter as the second operand.
-
-Example: basicCalculator(10, 5, 'subtract') should return 5.
-*/
-const basicCalculator = (num1, num2, operation) => {
-  switch (operation) {
-    case 'add':
-      return num1 + num2;
-    case 'subtract':
-      return num1 - num2;
-    case 'multiply':
-      return num1 * num2;
-    case 'divide':
-      if (num2 === 0) {
-        return 'Error: Cannot divide by zero';  
-      } else {
-        return num1 / num2;
-      }
-    default:
-      return 'Invalid operation';  
-  }
-}
-
-console.log('Exercise 9 Result:', basicCalculator(10, 5, "subtract")); 
-console.log('Exercise 9 Result:', basicCalculator(10, 10, "subtract"));
+let num = numArrays[2][1];
+console.log('Exercise 14 result:', num);
